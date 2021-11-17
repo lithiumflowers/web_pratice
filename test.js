@@ -12,7 +12,7 @@ var box = document.getElementsByClassName('box')[0],
 *@return none
 */
 function disPlay () {
-	var initLeft = parseInt(window.getComputedStyle(box).left);
+	let initLeft = parseInt(window.getComputedStyle(box).left);
 	if(index == img_count - 1){
 		moveTo(0);
 		index = 0;
@@ -29,14 +29,14 @@ function disPlay () {
 */
 function lastPlay () {
 	if(index == 0){
-		moveTo(5);
-		index = 5;
+		moveTo(4);
+		index = 4;
 	}else{
 		moveTo(--index);
 	}
 }
 function nextPlay () {
-	if(index == 5){
+	if(index == 4){
 		moveTo(0);
 		index = 0;
 	}else{
@@ -50,9 +50,9 @@ function nextPlay () {
 *@return none
 */
 function bindEvent() {
-	var li = dot.getElementsByTagName('li');
-	var next = document.getElementsByClassName('next')[0];
-	var last = document.getElementsByClassName('last')[0];
+	let li = dot.getElementsByTagName('li');
+	let next = document.getElementsByClassName('next')[0];
+	let last = document.getElementsByClassName('last')[0];
 	next.addEventListener('click',function () {
 		clearInterval(timer);
 		nextPlay();
@@ -63,7 +63,7 @@ function bindEvent() {
 		lastPlay();		
 		timer = setInterval(disPlay,2000);
 	});
-	for(var i = 0; i < 4; i++){
+	for(var i = 0; i < 5; i++){
 		(function (j) {
 			li[j].addEventListener('click',function () {
 				clearInterval(timer);
